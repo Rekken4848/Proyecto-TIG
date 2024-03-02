@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8685dcb6f161c6e08c6d243c08a6c34a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                <style>
+                    .leaflet-image-layer {
+                        /* old android/safari*/
+                        image-rendering: -webkit-optimize-contrast;
+                        image-rendering: crisp-edges; /* safari */
+                        image-rendering: pixelated; /* chrome */
+                        image-rendering: -moz-crisp-edges; /* firefox */
+                        image-rendering: -o-crisp-edges; /* opera */
+                        -ms-interpolation-mode: nearest-neighbor; /* ie */
+                    }
+                </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_8685dcb6f161c6e08c6d243c08a6c34a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8685dcb6f161c6e08c6d243c08a6c34a = L.map(
+                "map_8685dcb6f161c6e08c6d243c08a6c34a",
+                {
+                    center: [35.2, 136.06],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_83fa26bd7bc76eab55b2c85d78cbb41c = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+                tile_layer_83fa26bd7bc76eab55b2c85d78cbb41c.addTo(map_8685dcb6f161c6e08c6d243c08a6c34a);
+    
+            var image_overlay_6b08896ee4c488d8eef90aadba03df7f = L.imageOverlay(
+                "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAbCAYAAACTHcTmAAAESklEQVR42n2WC2hOYRjHT5IkSZIkSZIkSZLyHS0sLCwsdw25JJKw0CKhNQkNLVrkEmuuzW1orbm0Fmstd83G2ubSmI3N7jvn8f6et/drVnz1dr7vnPc8z//5///P835ec8p26bh6WCrjZkvbqb1St2GltF86KEFhprSdOSCdd09IWPtKgifnJXxzX4JXOdKRdUjCd7kSPL0s4bcXEv4sl7CyUH+3X0gVrzV9j/xYlyi/Nq/RIB3Xj0rN8sXStHeLBPmnJcjLkLDsoQbhGuSelKD4hgQFFyV4cVuThxUFEta9tXs+PBYPVK1pyYoQFARhkYArVXRmp9mX60slLM3TAN9XLdN7H6bN0MoUsako/FwsXsOWtdJ6fLc07dlsUYAOFKZcyuS5BgMlqL+W6Is5/X3dVzVnrjwd6ev73IcGj83wQMlsiAY1C2rqN67W+3D7aKgvJWN8LTPTi8jvnRsV8cfYWfqcwNDnNe/fKsH9dIsSdOYmGyAdnuGbQHf6ReRW34jcG+BrEoJy/Za4VKn7sihBmpI3SemkGCsUqoNWeUTBcyl6D/SFI3wpGuXLtV4RDcTie3afiJTHxMrXJQs1KMFwEIk9FcEI1Hn7mC275KYNSgKjcsXMOEX6ZJgvuYP8aGAQc6X852P9aLLq+HjxQNZyZJe1CTQYCihJk5h7xaN9DcyLoHNBuy/2gZpYHgo3pyZpRlBTtnrUcExJiMAC6b8CsnAA+9DIA5HrDnglU+O29VLmT5e3E6boZlC+nzz1v0HZc6N3REX2VHXjv5ZDOyR4dFbVpnUR0KGDS8fhvxbqY7Gwscr4tPqZmpxAIMWn0ABKNmOlrsL8b2k7m+XRv7Qiyv9O2qBcuoBuZfWI/KV8V3FcNewBkA1qFP6csMBOJqP8u4lTouiwCDzxvWC49SrtCb94l753+16O89U1WNHDo3QOAREHw3cvNSi6po4gIY5gYfwrPW0TICbGp6OI5+mAMOQiDA+cMH8FNQ0B9/iVAPlD7HOC852ZoAPJJA8bKqxQdBCDgxIpg42OAhYdhdVcd2Hy2jUrtGzXHLSqAjQTzWNcuf7NG2z7/PV4X6mAFniiMSj9wUCbtC1jn7qFPcwGxiMNpKdDW4Ph1KjOS5DvBgU08DKBmESg4TdlkhSxnIBQRQIaRudpS63tfUqnLPgCNUHoEFBCCeWRABF5mX0kcMrTnqClxcOmGqs+HmMDCAhI+Y5PNlONO8comVLxMpRBBVzid8RWnxLQZaXsroODJKB1KGkOKsFOn+bPi54IHEegJLkeJw4lC9K7WolgoCYwhyPckxQnYCEcwMzgSifqwWeOax19jnCHEo5Awm9mLCLCMQt6GB5wq9QYb+ppaiYd3aQDhTalLIeOQCB2JwF/IMjOfAARqHlOYI5rNGEPnMMnHz2jKAE+ycxmhMAeHIKUxNTiD4MODHO+08a8R9Mgng4i4yIGNJX/AYbE7hPOpOP/AAAAAElFTkSuQmCC",
+                [[34.944464552249386, 135.84772884097464], [35.55082736903006, 136.3193443651374]],
+                {}
+            );
+        
+    
+                image_overlay_6b08896ee4c488d8eef90aadba03df7f.addTo(map_8685dcb6f161c6e08c6d243c08a6c34a);
+    
+            var image_overlay_156909975846df2b786b5bc31efe7876 = L.imageOverlay(
+                "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAbCAYAAACTHcTmAAADzElEQVR42n3Ve4hVVRQG8I1EEBFBhBASQYQgIUFEEEIQBEGcg1RIUSEWhfSQQioEqZCiQvAPSaSoKCqNQcMyhgjLXliUWEiW9vSBZpnZg0Znxryr+1vD1sPl0sCes+/Ze3/r+7611j5lcsPaMA7csjAmN47E+CsvxNjy5fHtldflu18X3h975s6Pry9v8/fe6xfEj9fcePL9X0sfjWOrV8X+m+7M31suaqNY/GfZY7lp/Pln4oer58XRp1fGobsXx9aL2wQx9zx42z158Jc7FuW73+97KPbNuz3nwHfNmRu721ujTIy8HMbRFSty8fC9D8Tb5zbJ9MtL2vjuqhvi5/l35bBmDyUYIeO5bXYb4y89l2Ni/atRSKov/n5kWcoE8NO1N2d0sqz98eDSZGVgvKY0Cb7zijY+ndnGxNoXo/fNJ3F80xtR+AFs7MmnkgUbSGADIIy/uqxNH986u4nPZrX5DqiACLw3o0kV1o4sXhKlmo6xYaMNFZCvb57VxKbzmnyOntMkOFBnWUTdxxe26TfWhUzofCFNQjAHbk30d6Y36TOgwQHY2Q8vmAK3t5DMI8McWz4JIFhlOgywjtemnZpjW7CqDA1lUi0wRCaN/P8DNpQUQlmn2y9to9rAeFk1vCcNaJfNhjOHg9ZSLIB6v+1PVkoIWM0+6UaXJY+HAaoAgTVG0Zp87O36POVjB1z2beweVOjrTh/O0jnEdGXWKbD3z2+zPHhcu2swy8MS1lUBa3J0XZ9p/5/CJ5sVPB6UqFXV3yCgPLDKXP2mlds/6IP2bygvyZV5jLoHJcmB7jv1yOs/lzycSRNU5j1VUuGBHzbYOMyv45s3JiMH1TM1Y48/kdkeOW2qRWXdWnpKvsS4cYZJNFRH78jBVIIl2a+f0eSdUO8FwC4T+4q789izq7MTZHtYdlWH6xGoOVVYYepJsiSf2PpunPhicz/7fUAFrwL4V4FsJlsV6Crr5LPI16G2MJa6CHtq/WWiHCBDyWBbo2MElArNwHu1atRiRwSoonduSn6/JmW+Zrl75fFPeWEjiJYlXwByyXeOEvnAtrdnR5R/Pxo92cvMB4B5/U0mNYLXC0MlUGZuL0XUIMPO0r26SNVu5krFHUkW1vUTYx0g1uwQwB7Zl/TsKIdrcrTqYOGzgHRJqMnESq2yCqhA2GrT3vfbojgAmHe1t83rp0H7egLDWJJq0gCxx4eRPd4JnJ52W1OygNjscsmC7kdXXlg7KDj/2MVvNQzMjaeWS/2UkOHG56MgvKlfWl5iB0B3YUuhAKpAAl1KgHn/H2msi3/Sk0UcAAAAAElFTkSuQmCC",
+                [[34.944464552249386, 135.84772884097464], [35.55082736903006, 136.3193443651374]],
+                {}
+            );
+        
+    
+                image_overlay_156909975846df2b786b5bc31efe7876.addTo(map_8685dcb6f161c6e08c6d243c08a6c34a);
+    
+            var image_overlay_fdf57574c95e4b6eb62df44366aec160 = L.imageOverlay(
+                "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAbCAYAAACTHcTmAAAD80lEQVR42o3WDaieYxgH8LslrSQpSUqSkqSWpKSUktL7+GihtVpooUULLbS1FlotRGvSQrRo1mkY02nWmE6sYc3HWDMfxyyzTRyM95ydjz2353e97tfr3YxTd/f7Ps99/6/r+v//1/WeNLFudf5jyYN5/y3z8ujjj+X20qX50OIl8f3g7fNze9my7Iz91/sXxfrpznvjzLfV7Dxyz325/dDDcXfsmafy2MoVOTnw3cyb88czqu5FQQ7MvSsuBHATyDvP91w3pxvQPcv70eVPxHvgScTfFi4OgF8WPBDLS2vf7Nvy8NWzIrPvZ82Ni856t/H0VoBvObeKBOBEpU3wtPfGWwPQBVkCVY4dmIx6M/d89+XX5zXTWtnd7RdW+YPzq7g79uTyTvl4+HHe3fFQNICFN5nsvKTKb59Z5XfO6qzVqZV/mHNH3nRGK39x2bV516XXBKigOHYvOB199JE46LNsZCYLgF9eMTOAete6k1r5jVNa3YAy//SiKn995Q2ReXA6/tLzUZaMlQsY2NDZ1VGA/WvreVUsVbx7ThV3Eg5kChgVRRwLOFccD/SV6a0uLRZaEnInXn4hAPE5/uKzUQ6OcKs8678yLlmjJDF2AZ3a/FqudwyFiuzBLg7h6f+A4ploaXLTq9mqP9mcJwcHcv35lrCX8mX8zVU3Bb8uDJ7aymtPPDYg39oll8YHVuWpofUBKFMcT703GNlT9PWT/wk0cMKxQXUaylSZjny4MR9e9XREmFi/JjKut78VncEZLjB6EeV4pR/ZuiFaNuGQ8rLz0OK3XjVl2w+y4bSOTzUAQA4gMuoSDokl43rPzuCxPyM223bB32IRDs8qwbPlPWHZMNVffRRKK714sp83wdjNUNEcug1/KlCJoATVkboxOK13vR8C/Zuy9ciBXO8fDkCVKJt19Lq9DKX64N4InKhOMUandq8gdn0eFxoBuQOQdiakTAXxnfHx6XOSpb7/ef6CiFpEUVJpYaV5hzMgLGhJhFA87b3yQ/3JN9cG4GcXd4YB0pXAd6a6LH1WsoFhJ4qsVAbUhDMCJWdcJlyxlP5mE5OdYA777LAdb2VMloFTWpid3EeB7FP9+0iAKRuAsgEWL6KAAPVYO5QlFqeUMVl+MVCjggBFfBldbIO/XuNzh4NEAqZEYJ7hzzP0weHdEMrF0ob9s9Mhh3HLz/XwjigRUEy3ZuGcSAKgpKN+06ZAi0iMTyhUEIKQdtUwPO5YEMjh51ZGe+McTQRVSaqnJsNzJTsABHAxZkJjHX8aIP6x+Gt6qSImnBncdJzzqIvej4e7t3V/Edkjfg2aEikdZTdeNrlkXbcPBaizSsWnQLImssB/AtwTymLj9GvPAAAAAElFTkSuQmCC",
+                [[34.944464552249386, 135.84772884097464], [35.55082736903006, 136.3193443651374]],
+                {}
+            );
+        
+    
+                image_overlay_fdf57574c95e4b6eb62df44366aec160.addTo(map_8685dcb6f161c6e08c6d243c08a6c34a);
+    
+            var image_overlay_a5a52896570580a3d3838433e2b211d9 = L.imageOverlay(
+                "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAbCAYAAACTHcTmAAAESklEQVR42n2WC2hOYRjHT5IkSZIkSZIkSZLyHS0sLCwsdw25JJKw0CKhNQkNLVrkEmuuzW1orbm0Fmstd83G2ubSmI3N7jvn8f6et/drVnz1dr7vnPc8z//5///P835ec8p26bh6WCrjZkvbqb1St2GltF86KEFhprSdOSCdd09IWPtKgifnJXxzX4JXOdKRdUjCd7kSPL0s4bcXEv4sl7CyUH+3X0gVrzV9j/xYlyi/Nq/RIB3Xj0rN8sXStHeLBPmnJcjLkLDsoQbhGuSelKD4hgQFFyV4cVuThxUFEta9tXs+PBYPVK1pyYoQFARhkYArVXRmp9mX60slLM3TAN9XLdN7H6bN0MoUsako/FwsXsOWtdJ6fLc07dlsUYAOFKZcyuS5BgMlqL+W6Is5/X3dVzVnrjwd6ev73IcGj83wQMlsiAY1C2rqN67W+3D7aKgvJWN8LTPTi8jvnRsV8cfYWfqcwNDnNe/fKsH9dIsSdOYmGyAdnuGbQHf6ReRW34jcG+BrEoJy/Za4VKn7sihBmpI3SemkGCsUqoNWeUTBcyl6D/SFI3wpGuXLtV4RDcTie3afiJTHxMrXJQs1KMFwEIk9FcEI1Hn7mC275KYNSgKjcsXMOEX6ZJgvuYP8aGAQc6X852P9aLLq+HjxQNZyZJe1CTQYCihJk5h7xaN9DcyLoHNBuy/2gZpYHgo3pyZpRlBTtnrUcExJiMAC6b8CsnAA+9DIA5HrDnglU+O29VLmT5e3E6boZlC+nzz1v0HZc6N3REX2VHXjv5ZDOyR4dFbVpnUR0KGDS8fhvxbqY7Gwscr4tPqZmpxAIMWn0ABKNmOlrsL8b2k7m+XRv7Qiyv9O2qBcuoBuZfWI/KV8V3FcNewBkA1qFP6csMBOJqP8u4lTouiwCDzxvWC49SrtCb94l753+16O89U1WNHDo3QOAREHw3cvNSi6po4gIY5gYfwrPW0TICbGp6OI5+mAMOQiDA+cMH8FNQ0B9/iVAPlD7HOC852ZoAPJJA8bKqxQdBCDgxIpg42OAhYdhdVcd2Hy2jUrtGzXHLSqAjQTzWNcuf7NG2z7/PV4X6mAFniiMSj9wUCbtC1jn7qFPcwGxiMNpKdDW4Ph1KjOS5DvBgU08DKBmESg4TdlkhSxnIBQRQIaRudpS63tfUqnLPgCNUHoEFBCCeWRABF5mX0kcMrTnqClxcOmGqs+HmMDCAhI+Y5PNlONO8comVLxMpRBBVzid8RWnxLQZaXsroODJKB1KGkOKsFOn+bPi54IHEegJLkeJw4lC9K7WolgoCYwhyPckxQnYCEcwMzgSifqwWeOax19jnCHEo5Awm9mLCLCMQt6GB5wq9QYb+ppaiYd3aQDhTalLIeOQCB2JwF/IMjOfAARqHlOYI5rNGEPnMMnHz2jKAE+ycxmhMAeHIKUxNTiD4MODHO+08a8R9Mgng4i4yIGNJX/AYbE7hPOpOP/AAAAAElFTkSuQmCC",
+                [[34.944464552249386, 135.84772884097464], [35.55082736903006, 136.3193443651374]],
+                {}
+            );
+        
+    
+                image_overlay_a5a52896570580a3d3838433e2b211d9.addTo(map_8685dcb6f161c6e08c6d243c08a6c34a);
+    
+            var layer_control_de4009d568078c5b1411a80bc39af371_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_83fa26bd7bc76eab55b2c85d78cbb41c,
+                },
+                overlays :  {
+                    "landsat8_2022" : image_overlay_6b08896ee4c488d8eef90aadba03df7f,
+                    "landsat8_2023" : image_overlay_156909975846df2b786b5bc31efe7876,
+                    "landsat9_2022" : image_overlay_fdf57574c95e4b6eb62df44366aec160,
+                    "landsat9_2023" : image_overlay_a5a52896570580a3d3838433e2b211d9,
+                },
+            };
+            let layer_control_de4009d568078c5b1411a80bc39af371 = L.control.layers(
+                layer_control_de4009d568078c5b1411a80bc39af371_layers.base_layers,
+                layer_control_de4009d568078c5b1411a80bc39af371_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_8685dcb6f161c6e08c6d243c08a6c34a);
+
+        
+</script>
+</html>

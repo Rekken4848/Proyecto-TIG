@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto final TIG</title>
+
+    <link rel="stylesheet" href="estilo.css">
+    <script src="index.js"></script>
+
+    <style>
+        body{
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <div id="introduccion">
+        <div id="tituloIntroduccion">
+            <h1>Proyecto Final Web Tecnologías de la información geográfica</h1>
+        </div>
+        <div id="contenidoIntroduccion">
+            <p>Esta página web ha sido creada por los alumnos Diego Baldoví Santiago y Hugo Martín Escrihuela con
+                el fín de almacenar y mostrar las prácticas realizadas a lo largo del curso en la asignatura de
+                tecnologías de la información geográfica del 3º curso del grado en Tecnologías Interactivas</p>
+        </div>
+    </div>
+
+    <div id="seccionPracticas">
+        <div id="tituloSeccionPracticas">
+            <h2>Prácticas:</h2>
+        </div>
+
+        <div>
+            <div class="carousel">
+                <div class="carousel__body">
+
+                    <div id="carousel__slider">
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="cajaSlider" onclick="irALaPractica(1)">
+                                        <div class="infoPractica">
+                                            <div class="tituloPractica">
+                                                <h3>Prácticas 1 y 2: Introducción</h3>
+                                            </div>
+                                            <div class="infoPractica">
+                                                <p class="fechaPractica">10 Oct 2023</p>
+                                                <p class="contenidoInfoPractica">Introducción al programa qgis</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="imagenFondoPractica" id="imagenPrac1"></div>
+                                    </div>
+
+                                </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                            </div>
+                        </div>
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="cajaSlider" onclick="irALaPractica(4)">
+                                        <div class="infoPractica">
+                                            <div class="tituloPractica">
+                                                <h3>Práctica 4: Análisis de territorio</h3>
+                                            </div>
+                                            <div class="infoPractica">
+                                                <p class="fechaPractica">24 Oct 2023</p>
+                                                <p class="contenidoInfoPractica">Análisis y localización de una zona protegida para el lobo ibérico en la
+                                                    comunidad de Castilla y León</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="imagenFondoPractica" id="imagenPrac4"></div>
+                                    </div>
+                                </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                            </div>
+                        </div>
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="cajaSlider" onclick="irALaPractica(5)">
+                                        <div class="infoPractica">
+                                            <div class="tituloPractica">
+                                                <h3>Práctica 5: Teledetección</h3>
+                                            </div>
+                                            <div class="infoPractica">
+                                                <p class="fechaPractica">7 Nov 2023</p>
+                                                <p class="contenidoInfoPractica">Cálculo del índice dNBR del incendio de Marxuquera en agosto del 2008 con
+                                                    imágenes del Sentinel 2</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="imagenFondoPractica" id="imagenPrac5"></div>
+                                    </div>
+                                </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                            </div>
+                        </div>
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="cajaSlider" onclick="irALaPractica(7)">
+                                        <div class="infoPractica">
+                                            <div class="tituloPractica">
+                                                <h3>Práctica 7: GNSS Python</h3>
+                                            </div>
+                                            <div class="infoPractica">
+                                                <p class="fechaPractica">28 Nov 2023</p>
+                                                <p class="contenidoInfoPractica">Cálculo de valores con puntos geográficos mediante latitud y longitud</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="imagenFondoPractica" id="imagenPrac7"></div>
+                                    </div>
+                                </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                            </div>
+                        </div>
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="cajaSlider" onclick="irALaPractica(8)">
+                                        <div class="infoPractica">
+                                            <div class="tituloPractica">
+                                                <h3>Práctica 8: Folium</h3>
+                                            </div>
+                                            <div class="infoPractica">
+                                                <p class="fechaPractica">28 Nov 2023</p>
+                                                <p class="contenidoInfoPractica">Localización y mostrado de accidentes y contenedores en la ciudad de Madrid
+                                                    mediante Folium</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="imagenFondoPractica" id="imagenPrac8"></div>
+                                    </div>
+                                </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                            </div>
+                        </div>
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="cajaSlider" onclick="irALaPractica(9)">
+                                        <div class="infoPractica">
+                                            <div class="tituloPractica">
+                                                <h3>Práctica 9: Google Earth Engine</h3>
+                                            </div>
+                                            <div class="infoPractica">
+                                                <p class="fechaPractica">12 Dic 2023</p>
+                                                <p class="contenidoInfoPractica">Introducción a Google Earth Engine y cálculo del SAVI con imágenes del Sentinel
+                                                    2A sobre el incendio de Montitxelvo el 2 de noviembre de 2023</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="imagenFondoPractica" id="imagenPrac9"></div>
+                                    </div>
+                                </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                            </div>
+                        </div>
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="cajaSlider" onclick="irALaPractica(10)">
+                                        <div class="infoPractica">
+                                            <div class="tituloPractica">
+                                                <h3>Práctica 10: Ejercicio GEE</h3>
+                                            </div>
+                                            <div class="infoPractica">
+                                                <p class="fechaPractica">19 Dic 2023</p>
+                                                <p class="contenidoInfoPractica">Ejercício con Google Earth Engine para mostrar los niveles de agua y humedad de
+                                                    un lago</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="imagenFondoPractica" id="imagenPrac10"></div>
+                                    </div>
+                                </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                            </div>
+                        </div>
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="cajaSlider" onclick="irALaPractica(11)">
+                                        <div class="infoPractica">
+                                            <div class="tituloPractica">
+                                                <h3>Práctica 11: Plugins Folium</h3>
+                                            </div>
+                                            <div class="infoPractica">
+                                                <p class="fechaPractica">19 Dic 2023</p>
+                                                <p class="contenidoInfoPractica">Una serie de plugins y utilidades para crear un mapa con folium en python</p>
+                                            </div>
+                                        </div>
+                        
+                                        <div class="imagenFondoPractica" id="imagenPrac11"></div>
+                                    </div>
+                                </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="controladorSlider">
+                        <div class="carousel__prev"><i class="far fa-angle-left"></i><img src="flecha-izquierda.png"
+                                alt="">
+                        </div>
+                        <div id="contenedorBullets">
+                            <div id="bullet1" class="bullet" onclick="move(1)">1</div>
+                            <div id="bullet2" class="bullet" onclick="move(2)">4</div>
+                            <div id="bullet3" class="bullet" onclick="move(3)">5</div>
+                            <div id="bullet4" class="bullet" onclick="move(4)">7</div>
+                            <div id="bullet5" class="bullet" onclick="move(5)">8</div>
+                            <div id="bullet6" class="bullet" onclick="move(6)">9</div>
+                            <div id="bullet7" class="bullet" onclick="move(7)">10</div>
+                            <div id="bullet7" class="bullet" onclick="move(8)">11</div>
+                        </div>
+                        <div class="carousel__next"><i class="far fa-angle-right"></i><img src="flecha-correcta.png"
+                                alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+</body>
+
+</html>

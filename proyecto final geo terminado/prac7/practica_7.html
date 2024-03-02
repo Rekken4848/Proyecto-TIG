@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 7</title>
+
+    <link rel="stylesheet" href="../estilo.css">
+    <script src="../index.js"></script>
+</head>
+
+<body>
+    <div id="introduccion">
+        <div id="tituloIntroduccion">
+            <h1>Práctica 7</h1>
+        </div>
+        <div id="contenidoIntroduccion">
+            <p>En esta práctica utilizamos Python para crear una tabla y rellenarla con los valores de: latitud,
+                longitud, elevación (cota), distancia desde el anterior punto, distancia al origen, pendiente del tramo,
+                la velocidad, la orientación y el tiempo que se ha tardado a partir de un archivo .gpx que contiene los
+                puntos de un recorrido</p>
+        </div>
+    </div>
+
+    <div id="contenidoPractica">
+        <div id="contenedorArchivoPractica">
+            <h3>Waypoints.html</h3>
+            <div id="contenedorArchivoPracticaContenido">
+                <iframe src="Waypoints.html" width="1000" height="600" frameborder="0"></iframe>
+            </div>
+        </div>
+        <div id="contenedorArchivoPractica">
+            <h3>rendimiento.png</h3>
+            <div id="contenedorArchivoPracticaContenido">
+                <img src="rendimiento.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="contenedorDescargas">
+        <h3>Enunciado de la práctica</h3>
+        <div class="descarga">
+            <a href="enunciado_cuaderno_7_GNSS.html" target="_blank"><img src="../jupyterNotebook_icon.png" alt=""
+                    class="iconoDescargar"> enunciado_cuaderno_7_GNSS</a>
+        </div>
+    </div>
+
+    <div id="contenedorDescargas">
+        <h3>Archivos de la práctica:</h3>
+        <div class="descarga">
+            <a href="Waypoints.html" download="Waypoints.html"><img src="../descargarIcon.png" alt=""
+                    class="iconoDescargar"> Waypoints.html</a>
+            <a href="rendimiento.png" download="rendimiento.png" type="image/png"><img src="../descargarIcon.png" alt=""
+                    class="iconoDescargar"> rendimiento.png</a>
+            <a href="enunciado_cuaderno_7_GNSS.html" download="enunciado_cuaderno_7_GNSS.html" type="image/png"><img src="../descargarIcon.png" alt=""
+                    class="iconoDescargar"> enunciado_cuaderno_7_GNSS.html</a>
+            <a href="enunciado_cuaderno_7_GNSS.ipynb" download="enunciado_cuaderno_7_GNSS.ipynb" type="image/png"><img src="../descargarIcon.png" alt=""
+                    class="iconoDescargar"> enunciado_cuaderno_7_GNSS.ipynb</a>
+
+            <!--a href="rendimiento.png" id="descargarEnlace" onclick="descargarArchivo('rendimiento.png', 'rendimiento.png')"><img src="../descargarIcon.png" alt="" class="iconoDescargar"> rendimiento.png</a-->
+        </div>
+    </div>
+</body>
+
+</html>
